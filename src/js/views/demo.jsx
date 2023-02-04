@@ -15,11 +15,11 @@ export const Demo = () => {
             actions.obtenerinfodetalladoPersonaje(params.theid);
 
       },[params.theid])
-	console.log(store.caracter)
+	console.log(store.character)
 
 	return (
         <div className="container">
-              <CardHorizontal nombre={store.caracter?.name}
+              <CardHorizontal nombre={store.character?.name}
             //    descripcion={store.caracter[params]?.description}
             //   nacimiento={store.caracter[params]?.birth_year}
             //   sexo={store.caracter[params]?.gender}

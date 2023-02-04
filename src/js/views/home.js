@@ -12,6 +12,7 @@ export const Home = () => {
 console.log(store.people)
 console.log(store.planeta)
 console.log(store.vehiculo)
+
 	// const[infoPersonaje,setInfoPersonaje] = useState({})
     // const[infoPlanetas,setInfoPlanetas] = useState ({})
 	// const[infoVehiculos,setInfoVehiculos] = useState ({})
@@ -44,10 +45,10 @@ console.log(store.vehiculo)
 	// },[])
 
 	
+	
+	
 return(
 	
-	
-
 	<div className="container">
 		<h1 className="text-center bg-7 mt-5 text-warning"> <strong>Characters </strong></h1>
 		<div className="container-flex text-center mt-5 d-flex overflow-auto  border border-danger">

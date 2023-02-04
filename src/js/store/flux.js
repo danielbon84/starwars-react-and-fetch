@@ -10,7 +10,9 @@ const getState = ({
             people: [],
             planeta: [],
             vehiculo: [],
-            caracter: {},
+            character: {},
+            mundos:[],
+            marcas:[],
             demo: [{
                     title: "FIRST",
                     background: "white",
@@ -67,10 +69,27 @@ const getState = ({
                         fetch("https://www.swapi.tech/api/people/"+theid)
                         .then(res => res.json())
                         .then(data => setStore({
-                            caracter:data.result}))
+                            character:data.result}))
                         .catch(err => console.error(err))
                     },
-                
+
+                    obtenerinfodetalladoPlaneta(theid) {
+                        console.log(theid)
+                        fetch("https://www.swapi.tech/api/planets/")
+                      .then(res => res.json())
+                     .then(data => setStore({
+                         mundos:data.result}))
+                      .catch(err => console.error(err))
+                   },      
+
+                   obtenerinfodetalladoVehiculo() {
+                    fetch("https://www.swapi.tech/api/vehicles/")
+                   .then(res => res.json())
+                    .then(data => setStore({
+                      marcas:data.result}))
+                    .catch(err => console.error(err))
+                },
+
 
             changeColor: (index, color) => {
                 //get the store
