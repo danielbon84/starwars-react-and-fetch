@@ -11,12 +11,7 @@ export const Demoplaneta = () => {
 	console.log(params.theid); 
 	console.log(params);
 
-	function obtenerinfoPlaneta() {
-		fetch("https://www.swapi.tech/api/planets/"+params.theid)
-		.then(res => res.json())
-		.then(data => setInfoPlaneta(data.result))
-		.catch(err => console.error(err))
-	}
+	
 
 	useEffect(()=>{
 		obtenerinfoPlaneta()

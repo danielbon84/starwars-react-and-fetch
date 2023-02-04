@@ -11,12 +11,7 @@ export const Demovehiculo = () => {
 	console.log(params.theid); 
 	console.log(params);
 
-	function obtenerinfoVehiculo() {
-		fetch("https://www.swapi.tech/api/vehicles/"+params.theid)
-		.then(res => res.json())
-		.then(data => setInfoVehiculo(data.result))
-		.catch(err => console.error(err))
-	}
+	
 
 	useEffect(()=>{
 		obtenerinfoVehiculo()

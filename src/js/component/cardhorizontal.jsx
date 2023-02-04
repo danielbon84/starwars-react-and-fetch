@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import logo from "../../img/hombre.jpg";
 
 export const CardHorizontal = (props) => {
+  console.log(props.name)
     return (
 <div className="card mb-3 text-center p-5 m-5" style={{maxWidth: "auto"}}>
         <div className="row">
