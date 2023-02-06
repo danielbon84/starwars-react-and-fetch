@@ -17,7 +17,9 @@ const Card3 = (props) => {
           
           <Link to={"/demovehiculo/"+props.id}  className="btn btn-outline-primary me-4 ms-3">Learn More!</Link>
          
+          <div className="col-6">
          <button type="button" className="btn btn-outline-warning ms-5"><i className="fa fa-heart" /></button>
+         </div>
          </div>
      </div>
 			</div>

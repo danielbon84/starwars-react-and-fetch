@@ -20,12 +20,12 @@ export const Demo = () => {
 	return (
         <div className="container">
               <CardHorizontal nombre={store.character?.name}
-            //    descripcion={store.caracter[params]?.description}
-            //   nacimiento={store.caracter[params]?.birth_year}
-            //   sexo={store.caracter[params]?.gender}
-            //   altura={store.caracter[params]?.height}
-            //   pelo={store.caracter[params]?.hair_color}
-            //   ojos={store.caracter[params]?.eye_color}
+               descripcion={store.character[params]?.description}
+              nacimiento={store.character[params]?.birth_year}
+              sexo={store.character[params]?.gender}
+              altura={store.character[params]?.height}
+              pelo={store.character[params]?.hair_color}
+              ojos={store.character[params]?.eye_color}
              />
           </div>
 	);

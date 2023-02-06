@@ -19,7 +19,9 @@ const Card = (props) => {
           
           <Link to={"/demo/"+props.id}  className="btn  btn-outline-warning me-4 ms-3">Learn More!</Link>
          
-         <button type="button" className="btn btn-outline-warning ms-5"><i className="fa fa-heart" /></button>
+          <div className="col-6">
+         <button type="button" onClick={() => actions.agregarFavoritos(props.nombre)} className="btn btn-outline-warning ms-5"><i className="fa fa-heart" /></button>
+         </div>
          </div>
      </div>
 			</div>

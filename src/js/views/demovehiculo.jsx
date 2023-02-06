@@ -17,10 +17,10 @@ export const Demovehiculo = () => {
 		actions.obtenerinfodetalladoVehiculo(params.theid);
 	},[params.theid])
 	console.log(store.marcas)
-// console.log("24",infoVehiculo)
-// console.log("25",infoVehiculo.description);    
-// console.log("26",infoVehiculo.properties);
-// console.log("27",infoVehiculo.properties?.name);
+console.log("24",infoVehiculo)
+console.log("25",infoVehiculo.description);    
+console.log("26",infoVehiculo.properties);
+console.log("27",infoVehiculo.properties?.name);
 
 	return (
         <div className="container">

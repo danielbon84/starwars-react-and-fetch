@@ -1,5 +1,3 @@
-import { useParams } from "react-router";
-
 const getState = ({
     getStore,
     getActions,
@@ -11,8 +9,9 @@ const getState = ({
             planeta: [],
             vehiculo: [],
             character: {},
-            mundos:[],
-            marcas:[],
+            mundos: [],
+            marcas: [],
+            favorites: [],
             demo: [{
                     title: "FIRST",
                     background: "white",
@@ -38,58 +37,76 @@ const getState = ({
                 */
             },
             obtenerinfoPersonajes: () => {
-                
-                    fetch("https://swapi.dev/api/people")
-		.then(res => res.json())
-		.then(data => setStore({
-            people: data.results
-        }))
-		.catch(err => console.error(err))
-                    },
 
-              obtenerinfoPlaneta() {
-                         fetch("https://www.swapi.tech/api/planets/")
-                       .then(res => res.json())
-                      .then(data => setStore({
-                          planeta:data.results}))
-                       .catch(err => console.error(err))
-                    },      
+                fetch("https://swapi.dev/api/people")
+                    .then(res => res.json())
+                    .then(data => setStore({
+                        people: data.results
+                    }))
+                    .catch(err => console.error(err))
+            },
+
+            obtenerinfoPlaneta() {
+                fetch("https://www.swapi.tech/api/planets/")
+                    .then(res => res.json())
+                    .then(data => setStore({
+                        planeta: data.results
+                    }))
+                    .catch(err => console.error(err))
+            },
 
             obtenerinfoVehiculo() {
-                        fetch("https://www.swapi.tech/api/vehicles/")
-                       .then(res => res.json())
-                        .then(data => setStore({
-                          vehiculo:data.results}))
-                        .catch(err => console.error(err))
-                    },
-
-                
-                    obtenerinfodetalladoPersonaje(theid) {
-                        console.log(theid)
-                        fetch("https://www.swapi.tech/api/people/"+theid)
-                        .then(res => res.json())
-                        .then(data => setStore({
-                            character:data.result}))
-                        .catch(err => console.error(err))
-                    },
-
-                    obtenerinfodetalladoPlaneta(theid) {
-                        console.log(theid)
-                        fetch("https://www.swapi.tech/api/planets/")
-                      .then(res => res.json())
-                     .then(data => setStore({
-                         mundos:data.result}))
-                      .catch(err => console.error(err))
-                   },      
-
-                   obtenerinfodetalladoVehiculo() {
-                    fetch("https://www.swapi.tech/api/vehicles/")
-                   .then(res => res.json())
+                fetch("https://www.swapi.tech/api/vehicles/")
+                    .then(res => res.json())
                     .then(data => setStore({
-                      marcas:data.result}))
+                        vehiculo: data.results
+                    }))
                     .catch(err => console.error(err))
-                },
+            },
 
+
+            obtenerinfodetalladoPersonaje(theid) {
+                console.log(theid)
+                fetch("https://www.swapi.tech/api/people/" + theid)
+                    .then(res => res.json())
+                    .then(data => setStore({
+                        character: data.result
+                    }))
+                    .catch(err => console.error(err))
+            },
+
+            obtenerinfodetalladoPlaneta(theid) {
+                console.log(theid)
+                fetch("https://www.swapi.tech/api/planets/")
+                    .then(res => res.json())
+                    .then(data => setStore({
+                        mundos: data.result
+                    }))
+                    .catch(err => console.error(err))
+            },
+
+            obtenerinfodetalladoVehiculo() {
+                fetch("https://www.swapi.tech/api/vehicles/")
+                    .then(res => res.json())
+                    .then(data => setStore({
+                        marcas: data.result
+                    }))
+                    .catch(err => console.error(err))
+            },
+
+            agregarFavoritos: (item) => {
+                const store = getStore();
+                setStore({
+                    favorites: [...store.favorites, item]
+                });
+            },
+            borrarFavoritos: (itemBorrar) => {
+                const store = getStore();
+                const newFavorites = store.favorites.filter((item) => item !== itemBorrar)
+                setStore({
+                    favorites: newFavorites
+                })
+            },
 
             changeColor: (index, color) => {
                 //get the store
