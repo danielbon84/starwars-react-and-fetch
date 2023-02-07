@@ -8,15 +8,15 @@ export const Demovehiculo = () => {
 	const { store, actions } = useContext(Context);
 	
 	const params = useParams();
-	console.log(params.theid); 
-	console.log(params);
+	// console.log(params.theid); 
+	// console.log(params);
 
 	
 
 	useEffect(()=>{
 		actions.obtenerinfodetalladoVehiculo(params.theid);
 	},[params.theid])
-	console.log(store.marcas)
+	//console.log(store.marcas)
 // console.log("24",infoVehiculo)
 // console.log("25",infoVehiculo.description);    
 // console.log("26",infoVehiculo.properties);
@@ -25,9 +25,9 @@ export const Demovehiculo = () => {
 	return (
         <div className="container">
               <CardHorizontalVehiculo nombrevehiculo={store.marcas.properties?.name}
-              descripcion={store.marcas.descripcion}
+              cost_in_credits={store.marcas.properties?.cost_in_credits}
              model={store.marcas.properties?.model}
-             length ={store.marcas.properties?.length}
+             manufacturer ={store.marcas.properties?.manufacturer}
              passengers={store.marcas.properties?.passengers}
              crew={store.marcas.properties?.crew}
               />

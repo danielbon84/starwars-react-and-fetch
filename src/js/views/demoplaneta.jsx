@@ -34,7 +34,7 @@ export const Demoplaneta = () => {
              orbitalperiod ={store.mundos.properties?.orbital_period}
              rotationperiod={store.mundos.properties?.rotation_period}
              diameter={store.mundos.properties?.diameter}
-			 descripcion={store.mundos.description}
+			 cost_in_credits={store.mundos.properties?.cost_in_credits}
               />
           </div>
 	);
