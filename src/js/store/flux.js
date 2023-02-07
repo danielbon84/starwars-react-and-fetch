@@ -77,7 +77,7 @@ const getState = ({
 
             obtenerinfodetalladoPlaneta(theid) {
                 console.log(theid)
-                fetch("https://www.swapi.tech/api/planets/")
+                fetch("https://www.swapi.tech/api/planets/" + theid)
                     .then(res => res.json())
                     .then(data => setStore({
                         mundos: data.result
@@ -85,8 +85,8 @@ const getState = ({
                     .catch(err => console.error(err))
             },
 
-            obtenerinfodetalladoVehiculo() {
-                fetch("https://www.swapi.tech/api/vehicles/")
+            obtenerinfodetalladoVehiculo(theid) {
+                fetch("https://www.swapi.tech/api/vehicles/" + theid)
                     .then(res => res.json())
                     .then(data => setStore({
                         marcas: data.result

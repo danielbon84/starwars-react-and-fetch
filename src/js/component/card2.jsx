@@ -1,9 +1,10 @@
-import React from "react";
+import React, {useContext, useState, useEffect} from "react";
 import { Link } from "react-router-dom";
-import logo from "../../img/hombre.jpg";
 
+import { Context } from "../store/appContext";
 
 const Card2 = (props) => {
+  const { store, actions } = useContext(Context);
 	return (
      <div className="container col-xs-12 col-md-4 col-3 m-2">
 		  <div className="card" style={{width: "22rem"}}>
@@ -14,16 +15,17 @@ const Card2 = (props) => {
             <br /> Population:{props.poblacion}
             <br /> Terrain: {props.terreno}
           </p>
-          
+          <div className="row">
+						<div className="col-6">
           <Link to={"/demoplaneta/"+props.id}  className="btn btn-outline-primary me-4 ms-3">Learn More!</Link>
-         
+          </div>
           <div className="col-6">
-         <button type="button" className="btn btn-outline-warning ms-5"><i className="fa fa-heart" /></button>
+          <button type="button" onClick={() => actions.agregarFavoritos(props.nombre)} className="btn btn-outline-warning ms-5"><i className="fa fa-heart" /></button>
          </div>
          </div>
      </div>
 			</div>
-		
+      </div>
 	);
 };
 

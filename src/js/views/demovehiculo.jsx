@@ -17,19 +17,19 @@ export const Demovehiculo = () => {
 		actions.obtenerinfodetalladoVehiculo(params.theid);
 	},[params.theid])
 	console.log(store.marcas)
-console.log("24",infoVehiculo)
-console.log("25",infoVehiculo.description);    
-console.log("26",infoVehiculo.properties);
-console.log("27",infoVehiculo.properties?.name);
+// console.log("24",infoVehiculo)
+// console.log("25",infoVehiculo.description);    
+// console.log("26",infoVehiculo.properties);
+// console.log("27",infoVehiculo.properties?.name);
 
 	return (
         <div className="container">
-              <CardHorizontalVehiculo nombrevehiculo={store.marcas?.name}
-            //   descripcionvehiculo={infoVehiculo.properties?.descripcion_vehiculo}
-            //  model={infoVehiculo.properties?.model}
-            //  length ={infoVehiculo.properties?.length}
-            //  passengers={infoVehiculo.properties?.passengers}
-            //  crew={infoVehiculo.properties?.crew}
+              <CardHorizontalVehiculo nombrevehiculo={store.marcas.properties?.name}
+              descripcion={store.marcas.descripcion}
+             model={store.marcas.properties?.model}
+             length ={store.marcas.properties?.length}
+             passengers={store.marcas.properties?.passengers}
+             crew={store.marcas.properties?.crew}
               />
           </div>
 	);

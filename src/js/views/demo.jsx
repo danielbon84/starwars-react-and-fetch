@@ -8,24 +8,26 @@ export const Demo = () => {
 	const { store, actions } = useContext(Context);
 	
 	const params = useParams();
-	console.log(params.theid); 
-	console.log(params);
+	// console.log(params.theid); 
+	// console.log(params);
 
 	useEffect(()=>{
             actions.obtenerinfodetalladoPersonaje(params.theid);
 
       },[params.theid])
-	console.log(store.character)
+	// console.log(store.character.properties?.eye_color)
 
+      // console.log(store.character.description )
 	return (
         <div className="container">
-              <CardHorizontal nombre={store.character?.name}
-               descripcion={store.character[params]?.description}
-              nacimiento={store.character[params]?.birth_year}
-              sexo={store.character[params]?.gender}
-              altura={store.character[params]?.height}
-              pelo={store.character[params]?.hair_color}
-              ojos={store.character[params]?.eye_color}
+              <CardHorizontal nombre={store.character.properties?.name}
+               descripcion={store.character.description}
+              nacimiento={store.character.properties?.birth_year}
+              sexo={store.character.properties?.gender}
+              altura={store.character.properties?.height}
+              //pelo={store.character[params]?.hair_color}
+              ojos={store.character.properties?.eye_color}
+              colorpiel={store.character.properties?.skin_color}
              />
           </div>
 	);

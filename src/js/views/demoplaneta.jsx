@@ -16,8 +16,10 @@ export const Demoplaneta = () => {
 	useEffect(()=>{
 	actions.obtenerinfodetalladoPlaneta(params.theid);
 	},[params.theid])
-	console.log(store.mundos)
+	// console.log(store.mundos)
+	// console.log(store.mundos.properties?.climate)
 
+	// console.log(store.mundos.description )
 
 // console.log("24",infoPlaneta)
 // console.log("25",infoPlaneta.description);    
@@ -26,12 +28,13 @@ export const Demoplaneta = () => {
 
 	return (
         <div className="container">
-              <CardHorizontalplaneta1 nombreplaneta={store.mundos?.name}
-            //   climate={infoPlaneta.properties?.climate}
-            //  population={infoPlaneta.properties?.population}
-            //  orbitalperiod ={infoPlaneta.properties?.orbital_period}
-            //  rotationperiod={infoPlaneta.properties?.rotation_period}
-            //  diameter={infoPlaneta.properties?.diameter}
+              <CardHorizontalplaneta1 nombreplaneta={store.mundos.properties?.name}
+              climate={store.mundos.properties?.climate}
+             population={store.mundos.properties?.population}
+             orbitalperiod ={store.mundos.properties?.orbital_period}
+             rotationperiod={store.mundos.properties?.rotation_period}
+             diameter={store.mundos.properties?.diameter}
+			 descripcion={store.mundos.description}
               />
           </div>
 	);
